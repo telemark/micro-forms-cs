@@ -22,23 +22,27 @@
         text-align: center;
       }
 
-    button.mui-btn:hover {
-      background: #ffd520;
-      color: black;
-    }
+      button.mui-btn:hover {
+        background: #ffd520;
+        color: black;
+      }
 
-    .mui-textfield>input:focus, .mui-textfield>textarea:focus {
-      border-color: #6ac4ae;
-    }
-    .mui-textfield>input:focus~label, .mui-textfield>textarea:focus~label {
+      .mui-textfield>input:focus, .mui-textfield>textarea:focus {
+        border-color: #6ac4ae;
+      }
+      .mui-textfield>input:focus~label, .mui-textfield>textarea:focus~label {
         color: #6ac4ae;
-    }
+      }
     </style>
   </head>
   <body>
     <div class="mui-container-fluid ">
+      <form method="POST" action="/">
       <h1 class='mui--text-title'>Bestill mobiltelefon</h1>
-        <mui-textfield name="bestiller" type="text" label="Bestillers navn" value="{{bestiller}}"></mui-textfield>
+        <div class="mui-textfield mui-textfield--float-label">
+          <input type="text" name="bestiller" value="{{bestiller}}" />
+          <label>Bestiller</label>
+        </div>
         <!-- Mobiltelefoner -->
         <legend>Mobiltelefon</legend>
           <div class="mui-radio">
@@ -97,8 +101,7 @@
           </label>
         </div>
         <div class="mui-textfield mui-textfield--float-label">
-          <textarea name="begrunnelse" class="mui--is-untouched mui--is-pristine mui--is-empty" rows="2">
-          </textarea>
+          <textarea name="begrunnelse" class="mui--is-untouched mui--is-pristine mui--is-empty" rows="2"></textarea>
           <label style="transition: 0.15s ease-out;">
             Begrunnelse
           </label>
@@ -118,11 +121,13 @@
         <input type="hidden" name="employeeNumber" value="{{employeeNumber}}"/>
         <input type="hidden" name="company" value="{{company}}"/>
         <input type="hidden" name="department" value="{{department}}"/>
+        <input type="hidden" name="userId" value="{{userId}}"/>
       <button class="mui-btn mui-btn--raised">Send bestilling
         <span class="mui-btn__ripple-container">
           <span class="mui-ripple"/>
         </span>
       </button>
+      </form>
      </div>
   </body>
 </html>

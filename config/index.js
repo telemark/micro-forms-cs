@@ -1,5 +1,9 @@
 'use strict'
 
+// Local debug
+// process.env.ORIGIN_URL = 'http://localhost:3000'
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+
 module.exports = {
   SSO_URL: process.env.SSO_URL || 'https://sso.router.t-fk.win',
   ORIGIN_URL: process.env.ORIGIN_URL || 'https://cs.next.t-fk.no',

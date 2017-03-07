@@ -1,39 +1,19 @@
 'use strict'
 
 const { send, sendError } = require('micro')
+const postHandler = require('./handler/post')
+const getHandler = require('./handler/get')
 const { parse } = require('url')
-const config = require('./config')
-const readFileSync = require('fs').readFileSync
-const tmpl = require('hogan.js')
-const getSession = require('./lib/get-session')
-
-async function postHandler (request) {
-
-}
-
-async function getHandler (request, response) {
-  const { query } = await parse(request.url, true)
-  if (!query.jwt) {
-    const url = `${config.SSO_URL}?origin=${config.ORIGIN_URL}`
-    response.writeHead(302, { Location: url })
-    response.end()
-  } else {
-    const data = await getSession(query.jwt)
-    const html = await readFileSync('./static/html/form.html', 'utf-8')
-    let template = tmpl.compile(html)
-    const output = template.render(data)
-    response.setHeader('Content-Type', 'text/html')
-    return output
-  }
-}
 
 async function methodHandler (request, response) {
   try {
     switch (request.method) {
       case 'POST':
         return await postHandler(request)
+        break
       case 'GET':
         return await getHandler(request, response)
+        break
       default:
         send(response, 405, 'Invalid method')
         break
@@ -44,9 +24,14 @@ async function methodHandler (request, response) {
 }
 
 module.exports = async (request, response) => {
-  try {
-    send(response, 200, await methodHandler(request, response))
-  } catch (error) {
-    sendError(request, response, error)
+  const { pathname } = await parse(request.url, true)
+  if (pathname === '/favicon.ico') {
+    send(response, 404)
+  } else {
+    try {
+      send(response, 200, await methodHandler(request, response))
+    } catch (error) {
+      sendError(request, response, error)
+    }
   }
 }
