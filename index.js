@@ -11,25 +11,29 @@ async function postHandler (request) {
 
 }
 
-async function getHandler (request, data) {
-  try {
+async function getHandler (request, response) {
+  const { query } = await parse(request.url, true)
+  if (!query.jwt) {
+    const url = `${config.SSO_URL}?origin=${config.ORIGIN_URL}`
+    response.writeHead(302, { Location: url })
+    response.end()
+  } else {
+    const data = await getSession(query.jwt)
     const html = await readFileSync('./static/html/form.html', 'utf-8')
     let template = tmpl.compile(html)
     const output = template.render(data)
+    response.setHeader('Content-Type', 'text/html')
     return output
-  } catch (error) {
-    throw error
   }
 }
 
-async function methodHandler (request, response, data) {
+async function methodHandler (request, response) {
   try {
     switch (request.method) {
       case 'POST':
         return await postHandler(request)
       case 'GET':
-        response.setHeader('Content-Type', 'text/html')
-        return await getHandler(request, data)
+        return await getHandler(request, response)
       default:
         send(response, 405, 'Invalid method')
         break
@@ -40,17 +44,9 @@ async function methodHandler (request, response, data) {
 }
 
 module.exports = async (request, response) => {
-  const { query } = await parse(request.url, true)
-  if (!query.jwt) {
-    const url = `${config.SSO_URL}?origin=${config.ORIGIN_URL}`
-    response.writeHead(302, { Location: url })
-    response.end()
-  } else {
-    const data = await getSession(query.jwt)
-    try {
-      send(response, 200, await methodHandler(request, response, data))
-    } catch (error) {
-      sendError(request, response, error)
-    }
+  try {
+    send(response, 200, await methodHandler(request, response))
+  } catch (error) {
+    sendError(request, response, error)
   }
 }
