@@ -1,9 +1,8 @@
 'use strict'
 
 const { parse } = require('url')
-const readFileSync = require('fs').readFileSync
-const tmpl = require('hogan.js')
 const config = require('../config')
+const fromTemplate = require('../lib/from-template')
 const getSession = require('../lib/get-session')
 
 module.exports = async (request, response) => {
@@ -14,10 +13,7 @@ module.exports = async (request, response) => {
     response.end()
   } else {
     const data = await getSession(query.jwt)
-    const html = await readFileSync('./static/html/form.html', 'utf-8')
-    const template = tmpl.compile(html)
-    const output = template.render(data)
-    response.setHeader('Content-Type', 'text/html')
+    const output = await fromTemplate('./static/html/form.html', data)
     return output
   }
 }

@@ -38,7 +38,7 @@
   },
   "now": {
     "alias": [
-      "cs-form.next.t-fk.no"
+      "cs.next.t-fk.no"
     ],
     "env": {
       "NODE_ENV": "production"

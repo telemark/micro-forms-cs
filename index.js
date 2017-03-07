@@ -26,6 +26,7 @@ module.exports = async (request, response) => {
     send(response, 404)
   } else {
     try {
+      response.setHeader('Content-Type', 'text/html')
       send(response, 200, await methodHandler(request, response))
     } catch (error) {
       sendError(request, response, error)
