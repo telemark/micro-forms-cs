@@ -14,8 +14,7 @@ ORIGIN_URL=https://cs-form.next.t-fk.no
 JWT_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
 ENCRYPTOR_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
 SESSION_STORAGE_URL=https://tmp.storage.service.t-fk.no
-CS_URL=https://cs-service.t-fk.no
-path=/createTicket
+CS_URL=https://cs-service.t-fk.no/createTicket
 ```
 
 ## API
