@@ -10,13 +10,10 @@ async function methodHandler (request, response) {
     switch (request.method) {
       case 'POST':
         return await postHandler(request)
-        break
       case 'GET':
         return await getHandler(request, response)
-        break
       default:
         send(response, 405, 'Invalid method')
-        break
     }
   } catch (error) {
     throw error
