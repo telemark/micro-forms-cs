@@ -57,6 +57,7 @@
     "hogan.js": "3.0.2",
     "jsonwebtoken": "7.3.0",
     "micro": "7.1.0",
+    "node-session": "1.2.1",
     "simple-encryptor": "1.1.0",
     "urlencoded-body-parser": "2.0.0"
   }

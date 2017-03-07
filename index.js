@@ -4,6 +4,9 @@ const { send, sendError } = require('micro')
 const postHandler = require('./handler/post')
 const getHandler = require('./handler/get')
 const { parse } = require('url')
+const config = require('./config')
+const NodeSession = require('node-session')
+const session = new NodeSession({ secret: config.SESSION_SECRET })
 
 async function methodHandler (request, response) {
   try {
@@ -21,15 +24,17 @@ async function methodHandler (request, response) {
 }
 
 module.exports = async (request, response) => {
-  const { pathname } = await parse(request.url, true)
-  if (pathname === '/favicon.ico') {
-    send(response, 404)
-  } else {
-    try {
-      response.setHeader('Content-Type', 'text/html')
-      send(response, 200, await methodHandler(request, response))
-    } catch (error) {
-      sendError(request, response, error)
+  session.startSession(request, response, async () => {
+    const { pathname } = await parse(request.url, true)
+    if (pathname === '/favicon.ico') {
+      send(response, 404)
+    } else {
+      try {
+        response.setHeader('Content-Type', 'text/html')
+        send(response, 200, await methodHandler(request, response))
+      } catch (error) {
+        sendError(request, response, error)
+      }
     }
-  }
+  })
 }
