@@ -6,7 +6,8 @@ const getHandler = require('./handler/get')
 const { parse } = require('url')
 const config = require('./config')
 const NodeSession = require('node-session')
-const session = new NodeSession({ secret: config.SESSION_SECRET })
+const os = require('os')
+const session = new NodeSession({ secret: config.SESSION_SECRET, files: `${os.tmpdir()}/sessions` })
 
 async function methodHandler (request, response) {
   try {
