@@ -9,32 +9,18 @@ Forms for CS based on micro
 ## config docker.env
 
 ```bash
+SSO_URL=https://sso.router.t-fk.win
+ORIGIN_URL=https://cs-form.next.t-fk.no
 JWT_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
 ENCRYPTOR_SECRET=Louie Louie, oh no, I got to go Louie Louie, oh no, I got to go
-SESSION_STORAGE_URL=https://tmp.storage.micro.t-fk.no
-LDAP_URL=ldap://ldap.forumsys.com:389
-LDAP_BIND_DN=cn=read-only-admin,dc=example,dc=com
-LDAP_BIND_CREDENTIALS=password
-LDAP_SEARCH_BASE=dc=example,dc=com
-LDAP_SEARCH_FILTER=(uid={{username}})
+SESSION_STORAGE_URL=https://tmp.storage.service.t-fk.no
+CS_URL=https://cs-service.t-fk.no
+path=/createTicket
 ```
 
 ## API
 
-### GET ```/login?origin=<url for redirect>```
-
-- returns loginform
-- successful login redirects to ```origin?jwt=<jwt>```
-
-### POST ```/auth```
-
--post username, password and origin
-- successful auth redirects to ```origin?jwt=<jwt>```
-
-### GET ```/?jwt=<jwt>```
-
-- jwt needs userName and origin
-- successful lookup of user redirects to ```origin?jwt=<jwt>```
+### GET ```/```
 
 ## License
 
