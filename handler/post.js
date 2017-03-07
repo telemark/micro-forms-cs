@@ -9,6 +9,6 @@ module.exports = async request => {
   const data = await bodyParser(request)
   const ticket = createTicket(data)
   const result = await postForm(ticket)
-  const output = await fromTemplate('./static/html/motatt.html', { saksnr: result.id })
+  const output = await fromTemplate('./static/html/mottatt.html', { saksnr: result.id })
   return output
 }
