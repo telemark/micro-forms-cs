@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.9/webcomponents/mui-webcomponents.js"></script>
+    <title>Forms CS</title>
+    <style>
+      body {
+        font-family: "Georgia", "Times", "Times New Roman", serif !important;
+        font-size: large;
+        background: white;
+        color: #000;
+      }
+
+      button.mui-btn {
+        background: #6ac4ae;
+        color: white;
+        width: 100%;
+        text-align: center;
+      }
+
+    button.mui-btn:hover {
+      background: #ffd520;
+      color: black;
+    }
+
+    .mui-textfield>input:focus, .mui-textfield>textarea:focus {
+      border-color: #6ac4ae;
+    }
+    .mui-textfield>input:focus~label, .mui-textfield>textarea:focus~label {
+        color: #6ac4ae;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="mui-container-fluid ">
+      <h1 class='mui--text-title'>Bestill mobiltelefon</h1>
+        <mui-textfield name="bestiller" type="text" label="Bestillers navn" value="{{bestiller}}"></mui-textfield>
+        <!-- Mobiltelefoner -->
+        <legend>Mobiltelefon</legend>
+          <div class="mui-radio">
+            <label>
+              <input type="radio" name="mobil" value="Samsung A5" checked />
+              Samsung A5
+            </label>
+          </div>
+          <div class="mui-radio">
+            <label>
+              <input type="radio" name="mobil" value="Samsung S7"/>
+              Samsung S7
+            </label>
+          </div>
+          <div class="mui-radio">
+            <label>
+              <input type="radio" name="mobil" value="Iphone 7 - 128 GB"/>
+              Iphone 7 - 128 GB
+            </label>
+          </div>
+          <div class="mui-radio">
+            <label>
+              <input type="radio" name="mobil" value="Iphone 7 Plus - 128 GB"/>
+              Iphone 7 Plus - 128 GB
+            </label>
+          </div>
+        <legend>Ekstrautstyr</legend>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="ekstrautstyr" value="Billader Android (Samsung)" />Billader Android (Samsung)
+          </label>
+        </div>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="ekstrautstyr" value="Ekstra lader 110v-240v Samsung (Android)" />Ekstra lader 110v-240v Samsung (Android)
+          </label>
+        </div>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="ekstrautstyr" value="Etui/skjermbeskytter (må spesifiseres om det er Samsung eller Apple)" />Etui/skjermbeskytter (må spesifiseres om det er Samsung eller Apple)
+          </label>
+        </div>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="ekstrautstyr" value="Sim kort (ekstra eller datakort)" />Sim kort (ekstra eller datakort)
+          </label>
+        </div>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="ekstrautstyr" value="Billader iPhone" />Billader iPhone
+          </label>
+        </div>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="ekstrautstyr" value="Ekstra lader 110v-240v iPhone 5, 6, 6s, 6s Plus og iPhone SE" />Ekstra lader 110v-240v iPhone 5, 6, 6s, 6s Plus og iPhone SE
+          </label>
+        </div>
+        <div class="mui-textfield mui-textfield--float-label">
+          <textarea name="begrunnelse" class="mui--is-untouched mui--is-pristine mui--is-empty" rows="2">
+          </textarea>
+          <label style="transition: 0.15s ease-out;">
+            Begrunnelse
+          </label>
+        </div>
+        <div class="mui-checkbox">
+          <label>
+            <input type="checkbox" name="godkjent" required="" value="ja">
+              Godkjent av leder
+          </label>
+        </div>
+        <div class="mui-textfield mui-textfield--float-label">
+          <input type="text" name="leder" required="" class="mui--is-untouched mui--is-pristine mui--is-not-empty" value="{{leder}}">
+          <label style="transition: 0.15s ease-out;">
+            Leders navn
+          </label>
+        </div>
+        <input type="hidden" name="employeeNumber" value="{{employeeNumber}}"/>
+        <input type="hidden" name="company" value="{{company}}"/>
+        <input type="hidden" name="department" value="{{department}}"/>
+      <button class="mui-btn mui-btn--raised">Send bestilling
+        <span class="mui-btn__ripple-container">
+          <span class="mui-ripple"/>
+        </span>
+      </button>
+     </div>
+  </body>
+</html>
