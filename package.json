@@ -5,9 +5,9 @@
   "license": "MIT",
   "private": true,
   "author": {
-    "name": "Geir Gåsodden",
-    "email": "geir.gasodden@pythonia.no",
-    "url": "https://github.com/zrrrzzt"
+    "name": "Jonas Enge",
+    "email": "jonas.enge@gmail.com",
+    "url": "https://github.com/maccyber"
   },
   "main": "index.js",
   "engines": {
