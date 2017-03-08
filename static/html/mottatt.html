@@ -1,3 +1,55 @@
 <html>
-Mottatt {{saksnr}}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.9/webcomponents/mui-webcomponents.js"></script>
+    <title>Forms CS</title>
+    <style>
+      body {
+        font-family: "Georgia", "Times", "Times New Roman", serif !important;
+        font-size: large;
+        background: white;
+        color: #000;
+      }
+
+      button.mui-btn {
+        background: #6ac4ae;
+        color: white;
+        width: 100%;
+        text-align: center;
+      }
+
+      button.mui-btn:hover {
+        background: #ffd520;
+        color: black;
+      }
+
+      .mui-textfield>input:focus, .mui-textfield>textarea:focus {
+        border-color: #6ac4ae;
+      }
+      .mui-textfield>input:focus~label, .mui-textfield>textarea:focus~label {
+        color: #6ac4ae;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mui-container">
+      <h1 class='mui--text-title'>Henvendelse mottatt</h1>
+        Vi takker for din henvendelse angående <i>"{{title}}"</i>. <br/>
+        Din henvendelse vil bli behandlet så snart som mulig. <br/><br/>
+        Saken er registrert med følgende saksnummer <strong> {{saksnr}} </strong><br/>
+        Ta vare på saksnummeret dersom du henvender deg til oss, slik at vi kan hjelpe deg raskest mulig.<br/>
+        <a href="https://forsiden.portalen.t-fk.no">
+        <button class="mui-btn mui-btn--raised">Tilbake til forsiden
+          <span class="mui-btn__ripple-container">
+            <span class="mui-ripple"></span>
+          </span>
+        </button>
+        </a>
+    </div>
+  </body>
 </html>
+
