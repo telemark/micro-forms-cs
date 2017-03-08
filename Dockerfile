@@ -8,7 +8,7 @@
 FROM node:7.7-alpine
 
 # Maintainer
-MAINTAINER Geir Gåsodden
+MAINTAINER Jonas Enge
 
 # Bundle app source
 COPY . /src

@@ -21,6 +21,11 @@ CS_URL=https://cs-service.t-fk.no/createTicket
 
 ### GET ```/```
 
+## Screenshot
+
+
+![alt text](http://bildr.no/image/SnB1RHlj.jpeg "CS")
+
 ## License
 
 [MIT](LICENSE)
