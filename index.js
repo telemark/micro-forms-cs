@@ -29,6 +29,8 @@ module.exports = async (request, response) => {
     const { pathname } = await parse(request.url, true)
     if (pathname === '/favicon.ico') {
       send(response, 404)
+    } else if (pathname === '/ping') {
+      send(response, 200, { ping: 'pong' })
     } else {
       try {
         response.setHeader('Content-Type', 'text/html')
