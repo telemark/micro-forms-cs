@@ -4,8 +4,8 @@
 #
 ###########################################################
 
-# Setting the base to nodejs 7.7
-FROM node:7.7-alpine
+# Setting the base to nodejs 7.7.1
+FROM node:7.7.1-alpine
 
 # Maintainer
 MAINTAINER Jonas Enge

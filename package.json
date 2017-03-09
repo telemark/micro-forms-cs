@@ -9,20 +9,25 @@
     "email": "jonas.enge@gmail.com",
     "url": "https://github.com/maccyber"
   },
+  "contributors": [
+    {
+      "name": "Geir Gåsodden",
+      "email": "geir.gasodden@pythonia.no",
+      "url": "https://github.com/zrrrzzt"
+    }
+  ],
   "main": "index.js",
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=7.7.1"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
     "test-offline": "standard && ava",
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
-    "setup": "npm install",
     "standard-fix": "standard --fix",
     "start": "micro",
-    "dev": "micro",
-    "now-deploy": "npm test && now --npm && now alias"
+    "now-deploy": "npm test && now --npm -E && now alias"
   },
   "keywords": [
     "microservice",
@@ -38,7 +43,8 @@
   },
   "now": {
     "alias": [
-      "cs.next.t-fk.no"
+      "cs.next.t-fk.no",
+      "forms.cs.micro.t-fk.no"
     ],
     "env": {
       "NODE_ENV": "production"
@@ -53,7 +59,7 @@
     "test-listen": "1.0.1"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "0.15.3",
     "hogan.js": "3.0.2",
     "jsonwebtoken": "7.3.0",
     "micro": "7.1.0",
