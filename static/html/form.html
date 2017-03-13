@@ -51,6 +51,11 @@
       .mui-textfield>input:focus~label, .mui-textfield>textarea:focus~label {
         color: #6ac4ae;
       }
+
+      .desc {
+        color: #757575;
+        font-style: italic;
+      }
     </style>
   </head>
   <body>
@@ -62,10 +67,36 @@
     <div class="mui-container">
       <form method="POST" action="/">
       <h1 class='mui--text-title'>Bestill mobiltelefon</h1>
+
+        <!-- Bestiller -->
         <div class="mui-textfield mui-textfield--float-label">
           <input type="text" name="bestiller" value="{{bestiller}}" />
           <label>Bestiller</label>
         </div>
+
+        <!-- Telefon bruk -->
+        <legend>Telefon bruk</legend>
+        <div class="mui-radio">
+          <label>
+            <input type="radio" name="mobilBruk" value="Arbeidstelefon" checked />
+            Jobbtelefon
+          </label>
+          <span class="desc">- Jobbtelefonen skal ligge igjen på arbeidsplassen</span>
+        </div>
+        <div class="mui-radio">
+          <label>
+            <input type="radio" name="mobilBruk" value="Fritelefon" />
+            Fri telefon
+          </label>
+          <span class="desc">- Fri telefon kan benyttes hvor som helst</span>
+        </div>
+
+        <!-- Egenandel -->
+        <legend>Egenandel</legend>
+        <div class="mui-textfield mui-textfield--float-label">
+          <input type="text" name="egenandel" maxlength="10" placeholder="Beløp i kr" value="0 kr" />
+        </div>
+
         <!-- Mobiltelefoner -->
         <legend>Mobiltelefon</legend>
           <div class="mui-radio">
@@ -104,6 +135,8 @@
             (info)
             </a>
           </div>
+
+        <!-- Ekstrautstyr -->
         <legend>Ekstrautstyr</legend>
         <div class="mui-checkbox">
           <label>
@@ -138,12 +171,16 @@
         <div class="mui-textfield mui-textfield--float-label">
           <textarea name="begrunnelse" placeholder="Begrunnelse" class="mui--is-untouched mui--is-pristine mui--is-empty" rows="2"></textarea>
         </div>
+
+        <!-- Godkjent av leder -->
         <div class="mui-checkbox">
           <label>
             <input type="checkbox" name="godkjent" required="" value="ja">
               Godkjent av leder
           </label>
         </div>
+
+        <!-- Leders navn -->
         <div class="mui-textfield mui-textfield--float-label">
           <input type="text" name="leder" required="" class="mui--is-untouched mui--is-pristine mui--is-not-empty" value="{{leder}}" />
           <label style="transition: 0.15s ease-out;">
