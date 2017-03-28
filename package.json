@@ -54,7 +54,7 @@
     "ava": "0.18.2",
     "coveralls": "2.11.16",
     "nsp": "2.6.2",
-    "nyc": "10.1.2",
+    "nyc": "10.2.0",
     "standard": "9.0.2",
     "test-listen": "1.0.1"
   },
@@ -62,9 +62,9 @@
     "axios": "0.15.3",
     "hogan.js": "3.0.2",
     "jsonwebtoken": "7.3.0",
-    "micro": "7.1.0",
+    "micro": "7.3.0",
     "node-session": "1.2.1",
     "simple-encryptor": "1.1.0",
-    "urlencoded-body-parser": "2.0.0"
+    "urlencoded-body-parser": "2.0.1"
   }
 }
