@@ -61,7 +61,7 @@
   "dependencies": {
     "axios": "0.15.3",
     "hogan.js": "3.0.2",
-    "jsonwebtoken": "7.3.0",
+    "jsonwebtoken": "7.4.0",
     "micro": "7.3.0",
     "node-session": "1.2.1",
     "simple-encryptor": "1.1.0",
