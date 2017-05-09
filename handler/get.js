@@ -4,6 +4,7 @@ const { parse } = require('url')
 const config = require('../config')
 const fromTemplate = require('../lib/from-template')
 const getSession = require('../lib/get-session')
+const getEquipment = require('../lib/get-equipment')
 
 module.exports = async (request, response) => {
   const { query } = await parse(request.url, true)
@@ -19,7 +20,9 @@ module.exports = async (request, response) => {
     response.writeHead(302, { Location: '/' })
     response.end()
   } else {
-    const output = await fromTemplate('./static/html/form.html', sessionData)
+    const mobiles = await getEquipment('Mobil')
+    const equipment = await getEquipment('Ekstrautstyr')
+    const output = await fromTemplate('./static/html/form.html', Object.assign(sessionData, { mobiles: mobiles, equipment: equipment }))
     return output
   }
 }
