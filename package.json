@@ -1,7 +1,7 @@
 {
   "name": "micro-forms-cs",
   "description": "Forms for CS based on micro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "private": true,
   "author": {
@@ -52,8 +52,8 @@
   },
   "devDependencies": {
     "ava": "0.18.2",
-    "coveralls": "2.12.0",
-    "nsp": "2.6.3",
+    "coveralls": "2.11.16",
+    "nsp": "2.6.2",
     "nyc": "10.2.0",
     "standard": "9.0.2",
     "test-listen": "1.0.1"
