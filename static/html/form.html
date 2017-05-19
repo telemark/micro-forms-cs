@@ -7,7 +7,7 @@
     <link href="//cdn.muicss.com/mui-0.9.9/css/mui.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <script src="//cdn.muicss.com/mui-0.9.9/webcomponents/mui-webcomponents.js"></script>
-    <title>Forms CS</title>
+    <title>Telemark fylkeskommune - CS skjema</title>
     <style>
       body {
         font-family: "Roboto", "Georgia", "Times", "Times New Roman", serif !important;
@@ -78,17 +78,17 @@
         <legend>Telefon bruk</legend>
         <div class="mui-radio">
           <label>
-            <input type="radio" name="mobilBruk" value="Arbeidstelefon" checked />
-            Jobbtelefon
-          </label>
-          <span class="desc">- Jobbtelefonen skal ligge igjen på arbeidsplassen</span>
-        </div>
-        <div class="mui-radio">
-          <label>
-            <input type="radio" name="mobilBruk" value="Fritelefon" />
+            <input type="radio" name="mobilBruk" value="Fritelefon" checked />
             Fri telefon
           </label>
           <span class="desc">- Fri telefon kan benyttes hvor som helst</span>
+        </div>
+        <div class="mui-radio">
+          <label>
+            <input type="radio" name="mobilBruk" value="Arbeidstelefon" />
+            Jobbtelefon
+          </label>
+          <span class="desc">- Jobbtelefonen skal ligge igjen på arbeidsplassen</span>
         </div>
 
         <!-- Mobiltelefoner -->
@@ -96,15 +96,15 @@
         {{#mobiles}}
           <div class="mui-radio">
             <label>
-              <input type="radio" name="mobil" value="{{name}} - Egenandel: {{deductible}}" {{required}} />
-              {{name}} - <span class="desc">Egenandel: {{deductible}}</span>
+              <input type="radio" name="mobil" value="{{name}} Pris: {{price}} - Egenandel: {{deductible}}" {{required}} />
+              {{name}} - <span class="desc">Pris: {{price}} / Egenandel: {{deductible}}</span>
             </label>
           </div>
         {{/mobiles}}
   
         <!-- Ekstrautstyr -->
-        {{#equipment}}
         <legend>Ekstrautstyr</legend>
+        {{#equipment}}
         <div class="mui-checkbox">
           <label>
             <input type="checkbox" name="ekstrautstyr" value="{{name}}" />{{name}}
