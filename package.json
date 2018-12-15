@@ -51,7 +51,7 @@
     }
   },
   "devDependencies": {
-    "ava": "0.25.0",
+    "ava": "1.0.1",
     "coveralls": "2.11.16",
     "nsp": "2.6.2",
     "nyc": "11.8.0",
