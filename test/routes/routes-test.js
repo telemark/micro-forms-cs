@@ -14,5 +14,5 @@ const getUrl = fn => {
 test('it returns pong from /ping', async t => {
   const url = await getUrl(srv)
   const result = await axios.get(`${url}/ping`)
-  t.deepEqual(result.data, {ping: 'pong'}, 'ping ok')
+  t.deepEqual(result.data, { ping: 'pong' }, 'ping ok')
 })
