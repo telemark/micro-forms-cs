@@ -41,15 +41,6 @@
   "bugs": {
     "url": "https://github.com/telemark/micro-forms-cs/issues"
   },
-  "now": {
-    "alias": [
-      "cs.next.t-fk.no",
-      "forms.cs.micro.t-fk.no"
-    ],
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
   "devDependencies": {
     "ava": "1.2.0",
     "coveralls": "3.0.2",

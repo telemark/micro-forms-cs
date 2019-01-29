@@ -1,8 +1,9 @@
 {
   "version": 1,
   "name": "micro-forms-cs",
-  "aliases": [
-    "cs.next.t-fk.no"
+  "alias": [
+    "cs.next.t-fk.no",
+    "forms.cs.micro.t-fk.no"
   ],
   "type": "docker",
   "env": {
