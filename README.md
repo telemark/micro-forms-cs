@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/telemark/micro-forms-cs.svg?branch=master)](https://travis-ci.org/telemark/micro-forms-cs)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/micro-forms-cs.svg)](https://greenkeeper.io/)
 
 # micro-forms-cs
 
@@ -38,4 +37,3 @@ Returns
 
 [MIT](LICENSE)
 
-![alt text](https://robots.kebabstudios.party/micro-forms-cs.png "Robohash image of micro-forms-cs")
