@@ -1,5 +1,6 @@
 # IDE
 .idea
+.vs
 .vscode
 
 # Mac OS
@@ -48,3 +49,6 @@ yarn.lock
 
 # sessions
 sessions
+
+# Env
+.env
