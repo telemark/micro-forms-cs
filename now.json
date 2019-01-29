@@ -1,9 +1,10 @@
 {
+  "version": 1,
   "name": "micro-forms-cs",
   "aliases": [
     "cs.next.t-fk.no"
   ],
-  "type": "npm",
+  "type": "docker",
   "env": {
     "NODE_ENV": "production",
     "SSO_URL": "@micro-cs-sso-url",

@@ -1,26 +1,10 @@
-###########################################################
-#
-# Dockerfile for micro-forms-cs
-#
-###########################################################
+FROM mhart/alpine-node:10 as base
+WORKDIR /usr/src
+COPY package.json package-lock.json /usr/src/
+RUN npm i --production
+COPY . .
 
-# Setting the base to nodejs 7.7.1
-FROM node:7.10.1-alpine
-
-# Maintainer
-MAINTAINER Jonas Enge
-
-# Bundle app source
-COPY . /src
-
-# Change working directory
-WORKDIR "/src"
-
-# Install dependencies
-RUN npm install --production
-
-# Expose 3000
-EXPOSE 3000
-
-# Startup
-ENTRYPOINT npm start
+FROM mhart/alpine-node:base-10
+WORKDIR /usr/src
+COPY --from=base /usr/src .
+CMD ["node", "./node_modules/.bin/micro"]
